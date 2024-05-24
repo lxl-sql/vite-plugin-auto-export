@@ -6,38 +6,38 @@
 
 ```bash
 |- src
-	|- locales
-		|- zh
-			|- admin
-				|- role.json
-				|- log.json
-			|- default.json
-		|- en
-			|- admin
-				|- role.json
-				|- log.json
-			|- default.json
+  |- locales
+    |- zh
+      |- admin
+        |- role.json
+        |- log.json
+          |- default.json
+        |- en
+          |- admin
+            |- role.json
+            |- log.json
+          |- default.json
 ```
 
 输出
 
 ```bash
 |- src
-	|- locales
-		|- zh
-			|- admin
-				|- role.json
-				|- log.json
-				|- index.ts
-			|- default.json
-			|- index.ts
-		|- en
-			|- admin
-				|- role.json
-				|- log.json
-				|- index.ts
-			|- default.json
-			|- index.ts
+  |- locales
+    |- zh
+      |- admin
+        |- role.json
+        |- log.json
+        |- index.ts
+      |- default.json
+      |- index.ts
+    |- en
+      |- admin
+        |- role.json
+        |- log.json
+        |- index.ts
+      |- default.json
+      |- index.ts
 ```
 
 ## ES6模式下

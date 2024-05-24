@@ -11,7 +11,6 @@ import { Plugin } from "vite";
 function getImport(options: ImportOptions) {
   const { exportMember, file, keywords, importName, module } = options;
   const _file = file.replace(/.(ts|js)$/, "");
-  console.log("_file", _file);
   let _importName = importName;
   if (module === "ES6") {
     if (exportMember === "export") {
@@ -75,7 +74,11 @@ function generateIndexFile(options: ReplaceFileWithDir<AutoExportOptions>) {
       const importName = path.basename(file);
       const rootFile = outFile.replace(/.(ts|js)/, "");
       importParams.importName = importName;
-      importParams.file = `${file}/${rootFile}`;
+      if (rootFile === "index") {
+        importParams.file = file;
+      } else {
+        importParams.file = `${file}/${rootFile}`;
+      }
       const result = getImport(importParams);
       imports.push(result.import);
       exports.push(result.export);
@@ -162,7 +165,7 @@ function autoI18nPlugin(options: AutoExportOptions) {
   }
 }
 
-function vitePluginAutoExport(
+export default function vitePluginAutoExport(
   globalOptions: AutoExportOptions
 ): Plugin {
   return {
@@ -178,5 +181,5 @@ function vitePluginAutoExport(
 }
 
 // overwrite for cjs require('...')() usage
-module.exports = vitePluginAutoExport;
-vitePluginAutoExport["default"] = vitePluginAutoExport;
+// module.exports = vitePluginAutoExport;
+// vitePluginAutoExport["default"] = vitePluginAutoExport;
