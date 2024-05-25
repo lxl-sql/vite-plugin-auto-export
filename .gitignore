@@ -26,6 +26,8 @@ dist-ssr
 vite.config.ts
 index.html
 temp
-tsconfig.json
-pnpm-lock.yaml
-*.config.js
+# tsconfig.json
+# pnpm-lock.yaml
+# *.config.js
+# plugin
+# package.json

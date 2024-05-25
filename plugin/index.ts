@@ -4,6 +4,9 @@ import {
   ImportOptions,
 } from "./interface";
 
+// import fs from "fs";
+// import path from "path";
+
 const fs = require("fs");
 const path = require("path");
 import { Plugin } from "vite";
@@ -116,9 +119,7 @@ function generateIndexFile(options: GenerateIndexFileOptions) {
     exportMethod = "module.exports =";
   }
 
-  return `${imports.join("\n")}\n\n${exportMethod} {\n  ${exports.join(
-    ",\n  "
-  )}\n};\n`;
+  return `${imports.join("\n")}\n\n${exportMethod} {\n  ${exports.join(",\n  ")}\n};\n`;
 }
 
 function render(options: GenerateIndexFileOptions) {

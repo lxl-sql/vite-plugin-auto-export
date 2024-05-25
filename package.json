@@ -1,13 +1,14 @@
 {
   "name": "vite-plugin-auto-export",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "指定文件夹内的数据自动导出，适用于i18n的国际化配置",
   "main": "dist/index.js",
-  "module": "di",
-  "type": "module",
+  "module": "dist/index.js",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build-rollup",
+    "build": "npm run build-esbuild",
+    "build-vite": "vite build",
     "build-rollup": "rollup -c",
     "build-esbuild": "node ./esbuild.config.js"
   },
@@ -16,16 +17,16 @@
     "auto-export"
   ],
   "files": [
-    "plugin",
     "dist"
   ],
   "exports": {
     ".": {
-      "require": "./dist/index.js"
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
     }
   },
   "author": "lxl",
-  "license": "MIT",
+  "license": "ISC",
   "peerDependencies": {
     "vite": "5.2.11"
   },
