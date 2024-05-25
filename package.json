@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-auto-export",
-  "version": "0.0.16",
+  "version": "0.0.18",
   "description": "指定文件夹内的数据自动导出，适用于i18n的国际化配置",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

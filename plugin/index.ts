@@ -4,11 +4,8 @@ import {
   ImportOptions,
 } from "./interface";
 
-import fs from "fs";
-import path from "path";
-
-// const fs = require("fs");
-// const path = require("path");
+const fs = require("fs");
+const path = require("path");
 import { Plugin } from "vite";
 
 const defaultOutFile = "index.ts";
@@ -178,6 +175,9 @@ export default function vitePluginAutoExport(
     enforce: "pre",
     apply: "serve",
     buildStart() {
+      autoI18nPlugin(globalOptions);
+    },
+    handleHotUpdate() {
       autoI18nPlugin(globalOptions);
     },
   };
