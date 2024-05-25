@@ -28,5 +28,4 @@ vite.config.ts
 temp
 tsconfig.json
 pnpm-lock.yaml
-package.json
 esbuild.config.js
