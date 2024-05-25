@@ -23,9 +23,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-src
 vite.config.ts
+index.html
 temp
 tsconfig.json
 pnpm-lock.yaml
-esbuild.config.js
+*.config.js
